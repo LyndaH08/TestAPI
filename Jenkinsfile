@@ -66,10 +66,21 @@ pipeline {
              //archiveArtifacts artifacts: 'newman/results.html'
 			 
 			     emailext(
-            subject: "Build terminé : ${currentBuild.fullDisplayName}",
-            body: "Le build est terminé. Consultez le rapport ici : ${BUILD_URL}Newman Report",
-            to: "hachemilindaa@gmail.com",
-            attachmentsPattern: "newman/results.html" // chemin vers  rapport
+             to: 'equipe@exemple.com',
+    subject: "Build terminé : ${currentBuild.fullDisplayName}",
+    body: """
+    <html>
+      <body>
+        <h2>Jenkins Build Report</h2>
+        <p><strong>Projet :</strong> ${JOB_NAME}</p>
+        <p><strong>Build # :</strong> ${BUILD_NUMBER}</p>
+        <p><strong>Status :</strong> ${currentBuild.currentResult}</p>
+        <p>Consultez le rapport complet ici : <a href="${BUILD_URL}newman/results.html">Rapport Newman</a></p>
+        <p>Date et heure : ${new Date()}</p>
+      </body>
+    </html>
+    """,
+    mimeType: 'text/html',
         )
         }
     }
