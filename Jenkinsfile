@@ -48,7 +48,7 @@ pipeline {
               publishHTML(target: [ //Une fonction qui affiche un rapport html dans jenkins
                                  //Target : les options de configurations
                 reportName: 'Rapport',          // Nom visible dans Jenkins
-                reportDir: 'newman',            // Dossier contenant le HTML
+                reportDir: '',            // Dossier contenant le HTML
                 reportFiles: 'results.html',    // Fichier à afficher
                 keepAll: true,  //Garder tous les rapports de tous les builds
                 allowMissing: true, //Meme si le rapport n'existe pas le build est OK
