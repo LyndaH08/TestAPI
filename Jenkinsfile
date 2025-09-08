@@ -66,7 +66,7 @@ pipeline {
              //archiveArtifacts artifacts: 'newman/results.html'
 			 
 			     emailext(
-            //subject: "Build ${currentBuild.fullDisplayName} terminé",
+            subject: "Build  terminé",
             body: "Le build a terminé. Le rapport est en pièce jointe.",
             to: "hachemilindaa@gmail.com",
             attachmentsPattern: "results.html" // chemin vers  rapport
