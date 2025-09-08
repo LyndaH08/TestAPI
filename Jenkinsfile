@@ -47,7 +47,7 @@ pipeline {
 
         stage('Exécuter la collection Postman') {
             steps {
-                bat 'newman run TestRapport2.postman_collection.json'
+                bat 'newman run TestRapport2.postman_collection.json --reporters=cli,htmlextra --reporter-htmlextra-export newman/results.html'
            }
         }}
     post { //actions à exécuter après les stages.
@@ -60,7 +60,6 @@ pipeline {
                 reportFiles: 'results.html',    // Fichier à afficher
                 keepAll: true,  //Garder tous les rapports de tous les builds
                 allowMissing: true, //Meme si le rapport n'existe pas le build est OK
-                alwaysLinkToLastBuild : true
                    ])
             //sauvegarder des fichiers du workspace pour qu’ils 
             //soient visibles et téléchargeables apres le build
