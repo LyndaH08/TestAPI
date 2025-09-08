@@ -1,14 +1,14 @@
 pipeline {
     agent any
      parameters {
-        choice(name: 'ENV', choices: ['pp', 'test'], description: 'Choisir un environnement')
+        choice(name: 'ENV', choices: ['pp', 'test','QA'], description: 'Choisir un environnement')
     }
     stages {
-       stage('Run') {
-            steps {
-                echo "J’exécute avec l’environnement : ${params.ENV}"
-            }
-        }
+       //stage('Run') {
+         //   steps {
+            //    echo "J’exécute avec: ${params.ENV}"
+          //  }
+       // }
         stage('Installer Node.js si il existe pas') {
             steps {
                 bat '''
