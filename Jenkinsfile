@@ -66,8 +66,8 @@ pipeline {
              //archiveArtifacts artifacts: 'newman/results.html'
 			 
 			     emailext(
-             to: 'equipe@exemple.com',
-    subject: "Build terminé : ${currentBuild.fullDisplayName}",
+             to: 'hachemilindaa@exemple.com',
+            subject: "Build terminé : ${currentBuild.fullDisplayName}",
     body: """
     <html>
       <body>
