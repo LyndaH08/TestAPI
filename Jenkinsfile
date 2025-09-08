@@ -64,6 +64,13 @@ pipeline {
             //sauvegarder des fichiers du workspace pour qu’ils 
             //soient visibles et téléchargeables apres le build
              //archiveArtifacts artifacts: 'newman/results.html'
+			 
+			     emailext(
+            //subject: "Build ${currentBuild.fullDisplayName} terminé",
+            body: "Le build a terminé. Le rapport est en pièce jointe.",
+            to: "hachemilindaa@gmail.com",
+            attachmentsPattern: "results.html" // chemin vers  rapport
+        )
         }
     }
      
