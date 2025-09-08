@@ -69,7 +69,7 @@ pipeline {
             subject: "Build  terminé",
             body: "Le build a terminé. Le rapport est en pièce jointe.",
             to: "hachemilindaa@gmail.com",
-            attachmentsPattern: "results.html" // chemin vers  rapport
+            attachmentsPattern: "newman/results.html" // chemin vers  rapport
         )
         }
     }
